@@ -1,0 +1,88 @@
+.page { animation: fadeIn 0.5s ease forwards; }
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+.subtitle { color: var(--text-secondary); font-size: 0.92rem; }
+
+.filterWrap { min-width: 200px; }
+
+/* Table */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.table thead { background: var(--bg-card); }
+
+.table th {
+  padding: 0.8rem 0.85rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table td {
+  padding: 0.8rem 0.85rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.row { transition: background var(--transition-fast); }
+.row:hover { background: var(--bg-card-hover); }
+
+.orderId { font-weight: 700; font-family: monospace; color: var(--primary-light); }
+.link { color: var(--accent); font-size: 0.8rem; }
+.link:hover { text-decoration: underline; }
+.cost { font-weight: 700; color: var(--accent); }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.statusSelect {
+  padding: 0.35rem 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.statusSelect option { background: var(--bg-secondary); }
+
+.date { color: var(--text-muted); font-size: 0.8rem; }
+
+/* Skeleton */
+.skeleton { display: flex; flex-direction: column; gap: 0.75rem; }
+.skeletonRow {
+  height: 56px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .headerRow { flex-direction: column; }
+  .filterWrap { width: 100%; }
+}

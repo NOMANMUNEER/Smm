@@ -1,66 +1,64 @@
-import Image from "next/image";
+"use client";
+
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
-export default function Home() {
+export default function HomePage() {
+  const router = useRouter();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className={styles.hero}>
+      {/* Animated background orbs */}
+      <div className={styles.orb1}></div>
+      <div className={styles.orb2}></div>
+      <div className={styles.orb3}></div>
+
+      <div className={styles.content}>
+        <span className={styles.badge}>⚡ #1 SMM Panel</span>
+        <h1 className={styles.title}>
+          Grow Your <span className="gradient-text">Social Media</span> Presence
+        </h1>
+        <p className={styles.subtitle}>
+          Premium social media marketing services at unbeatable prices. Instagram,
+          YouTube, TikTok, Twitter, and more — all in one powerful dashboard.
+        </p>
+
+        <div className={styles.actions}>
+          <button
+            className={styles.btnPrimary}
+            onClick={() => router.push("/login")}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Get Started
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button
+            className={styles.btnSecondary}
+            onClick={() => router.push("/signup")}
           >
-            Documentation
-          </a>
+            Create Account
+          </button>
         </div>
-      </main>
+
+        {/* Stats row */}
+        <div className={styles.stats}>
+          <div className={styles.stat}>
+            <span className={styles.statNumber}>50K+</span>
+            <span className={styles.statLabel}>Orders Delivered</span>
+          </div>
+          <div className={styles.statDivider}></div>
+          <div className={styles.stat}>
+            <span className={styles.statNumber}>10K+</span>
+            <span className={styles.statLabel}>Happy Users</span>
+          </div>
+          <div className={styles.statDivider}></div>
+          <div className={styles.stat}>
+            <span className={styles.statNumber}>99.9%</span>
+            <span className={styles.statLabel}>Uptime</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
